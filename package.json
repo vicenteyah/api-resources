@@ -5,16 +5,19 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start-dev":"nodemon src/server.js"
+    "start-dev": "nodemon src/server.js"
   },
   "keywords": [],
   "author": "vicente yah",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "mogoose": "0.0.1-security"
+    "jsonwebtoken": "^8.5.1",
+    "mogoose": "0.0.1-security",
+    "multer": "^1.4.2"
   },
   "devDependencies": {
     "mongoose-morgan": "^1.0.16",
