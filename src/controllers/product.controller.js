@@ -15,11 +15,6 @@ async function addProduct ( req , res){
         description
     })
     
-    if(req.file){
-        const { fieldname } = req.file
-        product.setImgUrl(fieldname)
-    }
-    
     try{
         const productStored = await product.save()
         res.status(201).send({message:productStored})
