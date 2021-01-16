@@ -18,5 +18,3 @@ async function init (appConfig ,dbConfig) {
 }
 
 init(appConfig,dbConfig)
-
-

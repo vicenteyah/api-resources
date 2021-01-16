@@ -1,5 +1,4 @@
 const mongoose = require('mongoose')
-const { appConfig } = require('../config')
 const Schema = mongoose.Schema
 
 const productSchema = Schema({
