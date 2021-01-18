@@ -24,7 +24,6 @@ app.use(morgan({
     next();
 })*/
 
-app.use( express.static(__dirname+'/../storage/imgs'))
 app.use('/v2',apiProduct)
 app.use('/v2',authApi)
 

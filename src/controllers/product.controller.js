@@ -15,11 +15,6 @@ async function addProduct ( req , res){
         description
     })
     
-    if(req.file){
-        const { fieldname } = req.file
-        product.setImgUrl(fieldname)
-    }
-    
     try{
         const productStored = await product.save()
         res.status(201).send({message:productStored})
@@ -42,7 +37,7 @@ async function getProduct(req,res){
     try {
         await Product.findOne({_id:productId},(err,product)=>{
             if(err) return res.status(500).send({message:'cannot get this item'})
-            if(!product) return res.status(404).send({message:'item not found'})
+            if(!product) return res.status(200).send({message:'item not found'})
             res.status(200).send({message:product})
         })
     } catch (error) {
@@ -69,7 +64,7 @@ async function deleteProduct (req, res) {
     try {
         await Product.findOneAndDelete({_id:productId},(err,productDeleted) => {
             if(err) return res.status(500).send({message: 'cannot delete this product'})
-            if(!productDeleted) res.status(404).send({message: 'product not found'})
+            if(!productDeleted) res.status(200).send({message: 'item not found'})
             res.status(200).send({message:'this product has been deleted',productDeleted})
         })
     } catch (error) {
