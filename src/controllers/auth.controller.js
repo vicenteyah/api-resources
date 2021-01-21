@@ -40,14 +40,14 @@ async function signIn (req, res){
     }
 
     if(!matchUser){
-        res.status(404).send({message: 'User not found'})
+        res.status(200).send({message: 'User not found'})
         return;
     }
     
     const matchPass = await matchPassword(userData.password, matchUser.password)
 
     if(!matchPass){
-        res.status(403).send({message: 'invalid password'})
+        res.status(203).send({message: 'invalid password'})
         return;
     }
 
