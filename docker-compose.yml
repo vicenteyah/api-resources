@@ -1,0 +1,21 @@
+version: "3"
+
+services: 
+  web:
+    container_name: node-app
+    restart: always
+    build: .
+    ports:   
+        - "5000:5000"
+    volumes:
+    - .:/app
+    - ./error.log:/usr/app/error.log
+    links:
+        - mongo  
+  mongo:
+    container_name: mongotest
+    image: mongo
+    ports:
+        - "27017:27017"
+    volumes: 
+        - ./data:/data/db
